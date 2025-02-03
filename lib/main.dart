@@ -40,12 +40,21 @@ class _ContactListScreenState extends State<ContactListScreen> {
     showDialog(
       context: context,
       builder: (context) => AlertDialog(
-        title: Text("Confirmation"),
-        content: Text("Are you sure you want to delete?"),
+        title: Text(
+          "Confirmation",
+          style: TextStyle(fontSize: 30),
+        ),
+        content: Text(
+          "Are you sure for delete?",
+          style: TextStyle(fontSize: 20),
+        ),
         actions: [
           TextButton(
             onPressed: () => Navigator.pop(context),
-            child: Text("Cancel"),
+            child: Icon(
+              Icons.cancel,
+              size: 30,
+            ),
           ),
           TextButton(
             onPressed: () {
@@ -54,7 +63,10 @@ class _ContactListScreenState extends State<ContactListScreen> {
               });
               Navigator.pop(context);
             },
-            child: Text("Delete", style: TextStyle(color: Colors.red)),
+            child: Icon(
+              Icons.delete,
+              size: 30,
+            ),
           ),
         ],
       ),
